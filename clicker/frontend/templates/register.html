@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="/static/menu.css" />
+{% extends "base.html" %}
+{% block body %}
+<body>
+<main class="kub" align="center">
+  <form action="{% url 'register' %}" method="POST" class="fon">
+      {% csrf_token %}
+      {{user_form.as_p}}
+      <button type="submit" >Выпить кофе</button>
+    </form>
+    <a href="{% url 'login' %}" style="color: #000000">Уже побывал в Антейку раньше?</a>
+    <audio autoplay>
+    <source src="https://www.mboxdrive.com/TK_from_Ling_tosite_sigure_-_Unravel_61915568.mp3" >
+  </audio>
+    </main>
+    </body>
+{% endblock %}

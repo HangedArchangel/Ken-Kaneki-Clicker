@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+  <link rel="stylesheet" href="/static/clicker.css" />
+<body>
+    <main class="app" align="center">
+        <nav class="nav">
+            Сколько будет 1000 – 7, {{ user.username }}?
+            <a href="{% url 'logout' %}" style="color: #000000">Назад в Антейку</a>
+        </nav>
+
+        <div class="container">
+            <div id='coins'>{{core.coins}}</div>
+            <button class = '.but' onclick="call_click()"><img src="https://userimages-akm.imvu.com/catalog/includes/modules/phpbb2/images/avatars/177489571_1225825890596d06c0d2a43.gif" width="400" height="400"></button>
+            <p>
+                Количество сломанных пальцев Канеки: <span id="click_power">{{ core.click_power }}</span>
+            </p>
+            <p>
+                Количество съеденных гулей: <span id="auto_click_power">{{ core.auto_click_power }}</span>
+            </p>
+        </div>
+
+        <aside class="boosts" id="boosts">
+            <h2>Способы стать какуджа:</h2>
+            <div class="boosts-holder" id="boosts-holder">
+                {% for boost in boosts %}
+                    <button class="boost_{{boost.type}} but" id="boost_{{boost.id}}" onclick="buy_boost({{boost.id}})">
+                        <p>lvl: <span id="boost_level">{{boost.level}}</span></p>
+                        <p>+<span id="boost_power">{{boost.power}}</span></p>
+                        <p><span id="boost_price">{{boost.price}}</span></p>
+                    </button>
+                {% endfor %}
+            </div>
+        </aside>
+         <audio autoplay>
+    <source src="https://www.mboxdrive.com/audio-editor-output.mp3" >
+  </audio>
+    </main>
+</body>
+{% endblock %}

@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/static/menu.css" />
+{% extends "base.html" %}
+{% block body %}
+  {% if invalid %}
+    <a href="{% url 'register' %}" style="color: #ff0000">Гуля с таким идентификационным номером нет в базе данных Кокурии</a>
+  {% endif %}
+  <body>
+  <main class="kub" align="center">
+    <form action="{% url 'login' %}" method="POST" class="fon">
+        {% csrf_token %}
+        {{user_form.username}}
+        {{user_form.password}}
+        <button type="submit" style="color: #ff0000">Выпить кофе</button>
+      </form>
+      <a href="{% url 'register' %}" style="color: #000000">Ещё не дед инсайднулся?</a>
+      <audio autoplay>
+    <source src="https://www.mboxdrive.com/TWINKY_-_Ghoul_prod_by_LLIIEEDD_prod_by_LLIIEEDD_73223241.mp3" >
+  </audio>
+      </main>
+      </body>
+{% endblock %}

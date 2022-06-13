@@ -1,0 +1,24 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #ff0000;
+    background-image: url(http://pa1.narvii.com/7232/ca23351fa58bb6cec1ad749aa4e674e83a77162dr1-320-180_00.gif);
+    }
+
+.app {
+    margin: auto;
+    background-color: #ff0000;
+    border: 6px solid #000000;
+    border-radius: 2px;
+    padding: 10px;
+    width: 700px;
+    }
+
+.but{
+    background-color: #FFFFFF;
+    border: 6px solid #000000;
+    border-radius: 1px;
+    }
+
+
+
